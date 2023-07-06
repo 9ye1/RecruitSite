@@ -28,5 +28,5 @@ public class Applicant {
     private String introduce;
 
     @OneToOne
-    private JobOpening company;
+    private Posting company;
 }

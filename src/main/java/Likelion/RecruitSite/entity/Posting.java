@@ -5,12 +5,10 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class JobOpening {
+public class Posting {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,9 +1,10 @@
 import { React, useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Apply from './pages/Apply';
 import ComDetail from './pages/ComDetail';
 import Main from './pages/Main';
 import Offer from './pages/Offer';
+import './css/app.css';
 
 function App() {
   const [comId, setComId] = useState(0);

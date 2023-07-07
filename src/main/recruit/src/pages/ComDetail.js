@@ -34,5 +34,4 @@ function ComDetail(props) {
     </>
   )
 }
-
 export default ComDetail;

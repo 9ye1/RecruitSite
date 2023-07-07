@@ -1,0 +1,40 @@
+{
+    "companies" : [
+        {
+            "id" : "1",
+            "image" : "url?",
+            "name" : "토스",
+            "job_group" : "프론트엔드",
+            "info" : "여기는 토스입니다 프론트엔드 개발자 채용합니다.",
+            "personnel" : "8",
+            "salary" : "70000000",
+            "applicant":[
+                {
+                    "name": "구예원",
+                    "job" : "프론트엔드",
+                    "introduce" : "인재를 놓치시면 안됩니다."
+                },
+                {
+                    "name": "아무개",
+                    "job" : "프론트엔드",
+                    "introduce" : "키득키득"
+                }
+                ]
+        },
+        {
+            "id" : "2",
+            "image" : "url?",
+            "name" : "네이버",
+            "job_group" : "백엔드",
+            "info" : "여기는 네이버입니다 백엔드 개발자 채용합니다.",
+            "personnel" : "3",
+            "salary" : "4253200000",
+            "applicant":{
+                "name": "홍길동",
+                "job" : "백엔드",
+                "introduce" : "아버지를 아버지라 부르지 못하고..."
+            }
+        }
+    ]
+    
+}

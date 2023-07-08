@@ -12,4 +12,8 @@ public enum ExceptionCode {
         this.code = code;
         this.message = message;
     }
+
+    public int getCode() {
+        return code;
+    }
 }

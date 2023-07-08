@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Applicant {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     private String name;

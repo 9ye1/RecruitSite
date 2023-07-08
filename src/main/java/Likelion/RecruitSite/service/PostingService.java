@@ -2,6 +2,7 @@ package Likelion.RecruitSite.service;
 
 import Likelion.RecruitSite.dto.PostingDto;
 import Likelion.RecruitSite.dto.PostingDto.PostResponse;
+import Likelion.RecruitSite.dto.ResponseType;
 import Likelion.RecruitSite.entity.Posting;
 import Likelion.RecruitSite.repository.PostingRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Optional;
 
 import static Likelion.RecruitSite.dto.ExceptionCode.FIND_NOT;
 import static Likelion.RecruitSite.dto.ExceptionCode.SUCCESS;
@@ -26,14 +28,12 @@ public class PostingService {
     }
 
     public Object findOne(int id) {
-        Posting postingList = postingRepository.findById(id)
-                .orElseThrow(
-                () -> {
-                    throw new PostingDto.NoResponse(FIND_NOT);
-                }
-        );
+        Optional<Posting> postingList = postingRepository.findById(id);
+        if (postingList.isEmpty()) {
+            return new ResponseType(FIND_NOT);
+        }
 
-        return new PostResponse(SUCCESS, postingList);
+        return new PostResponse(SUCCESS, postingList.get());
     }
 
     public Object savePosting(PostingDto.PostDto postDto, MultipartFile file) {
@@ -45,6 +45,6 @@ public class PostingService {
 
         posting.setImageUrl(fileService.saveFile(posting.getId(), file));
         postingRepository.save(posting);
-        return new PostingDto.NoResponse(SUCCESS);
+        return new ResponseType(SUCCESS);
     }
 }

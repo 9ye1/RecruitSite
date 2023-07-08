@@ -3,14 +3,15 @@ package Likelion.RecruitSite.dto;
 import Likelion.RecruitSite.entity.Posting;
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PostingDto {
 
-    @Data
-    public class PostDto {
+    @Getter
+    public static class PostDto {
         private String name;
         private String job_group;
         private String info;
@@ -18,7 +19,7 @@ public class PostingDto {
         private int salary;
     }
 
-    @Data
+    @Getter
     public static class PostInfo {
         private Long id;
         private String image;
@@ -34,7 +35,7 @@ public class PostingDto {
     }
 
     @Getter
-    public static class PostInfoResponse extends ResponseType{
+    public static class PostInfoResponse extends ResponseType {
         private List<PostInfo> postingList;
 
         public PostInfoResponse(ExceptionCode exceptionCode, List<Posting> postingList) {
@@ -48,27 +49,12 @@ public class PostingDto {
     }
 
     @Getter
-    public static class NoResponse extends RuntimeException {
-
-        private ExceptionCode exceptionCode;
-
-        public NoResponse(ExceptionCode exceptionCode) {
-            this.exceptionCode = exceptionCode;
-        }
-
-    }
-
-    @Getter
-    public static class PostResponse extends ResponseType{
+    public static class PostResponse extends ResponseType {
         private Posting posting;
 
         public PostResponse(ExceptionCode exceptionCode, Posting posting) {
             super(exceptionCode);
             this.posting = posting;
         }
-    }
-
-    public class PostInfoDto {
-        private int id;
     }
 }

@@ -35,8 +35,7 @@ public class FileService {
                 .getInstance()
                 .bucket(firebaseBucket);
         InputStream content = new ByteArrayInputStream(file.getBytes());
-        Blob blob = bucket.create(name.toString(), content, file.getContentType());
-        System.out.println("FileService.uploadFiles");
+        Blob blob = bucket.create(name, content, file.getContentType());
         return blob.getMediaLink();
     }
 
@@ -45,10 +44,7 @@ public class FileService {
             //String extension = FilenameUtils.getExtension(multipartFile.getOriginalFilename());
             String name = FilenameUtils.getBaseName(multipartFile.getName()+"-"+id);
             String link = uploadFiles(multipartFile, name); // 반환 값 미사용
-            String url = downPath_front+name+downPath_back;
-            System.out.println("url = " + url);
-
-            return url;
+            return downPath_front+name+downPath_back;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

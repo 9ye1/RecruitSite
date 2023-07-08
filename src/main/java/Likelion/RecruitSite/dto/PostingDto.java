@@ -1,9 +1,8 @@
 package Likelion.RecruitSite.dto;
 
+import Likelion.RecruitSite.entity.Applicant;
 import Likelion.RecruitSite.entity.Posting;
-import lombok.Data;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,12 +48,32 @@ public class PostingDto {
     }
 
     @Getter
+    public static class ApplicantResponse {
+        private Long id;
+        private String name;
+        private String job;
+
+        public ApplicantResponse(Applicant applicant) {
+            this.id = applicant.getId();
+            this.name = applicant.getName();
+            this.job = applicant.getJob();
+        }
+    }
+
+    @Getter
     public static class PostResponse extends ResponseType {
         private Posting posting;
+        private List<ApplicantResponse> applicants;
 
-        public PostResponse(ExceptionCode exceptionCode, Posting posting) {
+        public PostResponse(ExceptionCode exceptionCode, Posting posting, List<Applicant> applicants) {
             super(exceptionCode);
             this.posting = posting;
+
+            this.applicants = new ArrayList<>();
+            for (Applicant a : applicants) {
+                this.applicants.add(new ApplicantResponse(a));
+            }
+
         }
     }
 }

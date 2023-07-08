@@ -3,7 +3,9 @@ package Likelion.RecruitSite.service;
 import Likelion.RecruitSite.dto.PostingDto;
 import Likelion.RecruitSite.dto.PostingDto.PostResponse;
 import Likelion.RecruitSite.dto.ResponseType;
+import Likelion.RecruitSite.entity.Applicant;
 import Likelion.RecruitSite.entity.Posting;
+import Likelion.RecruitSite.repository.ApplicantRepository;
 import Likelion.RecruitSite.repository.PostingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,7 @@ public class PostingService {
 
     private final PostingRepository postingRepository;
     private final FileService fileService;
+    private final ApplicantRepository applicantRepository;
 
     public Object findAll() {
         List<Posting> postingList = postingRepository.findAll();
@@ -28,12 +31,13 @@ public class PostingService {
     }
 
     public Object findOne(int id) {
-        Optional<Posting> postingList = postingRepository.findById(id);
-        if (postingList.isEmpty()) {
+        Optional<Posting> posting = postingRepository.findById(id);
+        if (posting.isEmpty()) {
             return new ResponseType(FIND_NOT);
         }
 
-        return new PostResponse(SUCCESS, postingList.get());
+        List<Applicant> applicants = applicantRepository.findAllById(posting.get().getId());
+        return new PostResponse(SUCCESS, posting.get(), applicants);
     }
 
     public Object savePosting(PostingDto.PostDto postDto, MultipartFile file) {

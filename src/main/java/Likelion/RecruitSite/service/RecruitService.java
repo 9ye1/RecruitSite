@@ -46,10 +46,11 @@ public class RecruitService {
                 .build();
         recruitRepository.save(applicant);
 
-        String img = fileService.saveFile(applicant.getId(), file, "applicant");
-        applicant.setImage(img);
 
-        return new ResponseType(SUCCESS);
+        if (file != null) {
+            applicant.setImage( fileService.saveFile(applicant.getId(), file, "applicant"));
+        }
+        return new ResponseType(ExceptionCode.SUCCESS);
     }
 
     public Object getAll() {

@@ -48,8 +48,7 @@ public class PostingService {
         postingRepository.save(posting);
 
         if (file != null) {
-            posting.setImageUrl(fileService.saveFile(posting.getId(), file, "posting"));
-            postingRepository.save(posting);
+            posting.setImage(fileService.saveFile(posting.getId(), file, "posting"));
         }
         return new ResponseType(ExceptionCode.SUCCESS);
     }

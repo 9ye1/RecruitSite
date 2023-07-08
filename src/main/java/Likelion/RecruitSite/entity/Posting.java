@@ -34,7 +34,7 @@ public class Posting {
         this.personnel = personnel;
     }
 
-    public void setImageUrl(String url) {
-        this.image = url;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

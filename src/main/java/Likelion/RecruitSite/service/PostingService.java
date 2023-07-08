@@ -1,21 +1,20 @@
 package Likelion.RecruitSite.service;
 
+import Likelion.RecruitSite.dto.ExceptionCode;
 import Likelion.RecruitSite.dto.PostingDto;
 import Likelion.RecruitSite.dto.PostingDto.PostResponse;
 import Likelion.RecruitSite.dto.ResponseType;
 import Likelion.RecruitSite.entity.Applicant;
 import Likelion.RecruitSite.entity.Posting;
-import Likelion.RecruitSite.repository.ApplicantRepository;
 import Likelion.RecruitSite.repository.PostingRepository;
+import Likelion.RecruitSite.repository.RecruitRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
-
-import static Likelion.RecruitSite.dto.ExceptionCode.FIND_NOT;
-import static Likelion.RecruitSite.dto.ExceptionCode.SUCCESS;
 
 @Service
 @RequiredArgsConstructor
@@ -23,23 +22,24 @@ public class PostingService {
 
     private final PostingRepository postingRepository;
     private final FileService fileService;
-    private final ApplicantRepository applicantRepository;
+    private final RecruitRepository recruitRepository;
 
     public Object findAll() {
         List<Posting> postingList = postingRepository.findAll();
-        return new PostingDto.PostInfoResponse(SUCCESS, postingList);
+        return new PostingDto.PostInfoResponse(ExceptionCode.SUCCESS, postingList);
     }
 
     public Object findOne(int id) {
         Optional<Posting> posting = postingRepository.findById(id);
         if (posting.isEmpty()) {
-            return new ResponseType(FIND_NOT);
+            return new ResponseType(ExceptionCode.FIND_NOT_POSTING);
         }
 
-        List<Applicant> applicants = applicantRepository.findAllById(posting.get().getId());
-        return new PostResponse(SUCCESS, posting.get(), applicants);
+        List<Applicant> applicants = recruitRepository.findAllByPostingId(posting.get().getId());
+        return new PostResponse(ExceptionCode.SUCCESS, posting.get(), applicants);
     }
 
+    @Transactional
     public Object savePosting(PostingDto.PostDto postDto, MultipartFile file) {
         Posting posting = Posting.builder().info(postDto.getInfo())
                 .jobGroup(postDto.getJob_group()).salary(postDto.getSalary())
@@ -48,9 +48,9 @@ public class PostingService {
         postingRepository.save(posting);
 
         if (file != null) {
-            posting.setImageUrl(fileService.saveFile(posting.getId(), file));
+            posting.setImageUrl(fileService.saveFile(posting.getId(), file, "posting"));
             postingRepository.save(posting);
         }
-        return new ResponseType(SUCCESS);
+        return new ResponseType(ExceptionCode.SUCCESS);
     }
 }

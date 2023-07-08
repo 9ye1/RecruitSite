@@ -8,12 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
-
 @RequestMapping("/companies")
 @RequiredArgsConstructor
 @RestController
-public class CompanyController {
+public class PostingController {
 
     private final PostingService postingService;
 

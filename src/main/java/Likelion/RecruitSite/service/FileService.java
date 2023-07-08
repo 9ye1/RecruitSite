@@ -39,10 +39,10 @@ public class FileService {
         return blob.getMediaLink();
     }
 
-    public String saveFile(Long id, MultipartFile multipartFile) {
+    public String saveFile(Long id, MultipartFile multipartFile, String fileName) {
         try {
             //String extension = FilenameUtils.getExtension(multipartFile.getOriginalFilename());
-            String name = FilenameUtils.getBaseName(multipartFile.getName()+"-"+id);
+            String name = FilenameUtils.getBaseName(multipartFile.getName()+"-"+fileName+id);
             String link = uploadFiles(multipartFile, name); // 반환 값 미사용
             return downPath_front+name+downPath_back;
         } catch (Exception e) {

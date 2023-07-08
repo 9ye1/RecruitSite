@@ -52,11 +52,13 @@ public class PostingDto {
         private Long id;
         private String name;
         private String job;
+        private String image;
 
         public ApplicantResponse(Applicant applicant) {
             this.id = applicant.getId();
             this.name = applicant.getName();
             this.job = applicant.getJob();
+            this.image = applicant.getImage();
         }
     }
 

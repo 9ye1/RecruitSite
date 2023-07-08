@@ -2,6 +2,7 @@ package Likelion.RecruitSite.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,4 +24,17 @@ public class Posting {
     private int personnel; // 인원
 
     private String image;
+
+    @Builder
+    public Posting(String info, String name, String jobGroup, int salary, int personnel) {
+        this.info = info;
+        this.name = name;
+        this.jobGroup = jobGroup;
+        this.salary = salary;
+        this.personnel = personnel;
+    }
+
+    public void setImageUrl(String url) {
+        this.image = url;
+    }
 }

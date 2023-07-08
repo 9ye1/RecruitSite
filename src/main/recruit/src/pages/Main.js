@@ -4,20 +4,41 @@ import Footer from '../components/Footer';
 import SlideShow from '../components/SlideShow';
 import General from '../components/General';
 import styled from '../css/main.module.scss';
+import axios from 'axios';
 
 function Main(props) {
+  const [Comdata, setComdata] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/companiesMain')
+      .then((response) => {
+        setComdata(response.data);
+      })
+      .catch(() => {
+        console.log('서버 연결 실패');
+      });
+  }, []);
+
   return (
     <div className={styled.main}>
       <NavBar></NavBar>
       <div className={styled.sizeBox}></div>
       <main className={styled.contents}>
-        {/* 디자인 요소 */}
         <SlideShow></SlideShow>
 
-        {/* 여기서부터가 진짜 우리 데이터 */}
         <div className={styled.general}>
           <h3> 일반 채용관</h3>
-          <General></General>
+          <div className={styled.generalBox}>
+            {Comdata.map((company) => (
+              <General
+                key={company.id}
+                image={company.image}
+                name={company.name}
+                job_group={company.job_group}
+              />
+            ))}
+          </div>
         </div>
       </main>
       <Footer></Footer>

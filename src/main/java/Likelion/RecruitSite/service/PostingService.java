@@ -43,8 +43,10 @@ public class PostingService {
                 .build();
         postingRepository.save(posting);
 
-        posting.setImageUrl(fileService.saveFile(posting.getId(), file));
-        postingRepository.save(posting);
+        if (file != null) {
+            posting.setImageUrl(fileService.saveFile(posting.getId(), file));
+            postingRepository.save(posting);
+        }
         return new ResponseType(SUCCESS);
     }
 }

@@ -1,5 +1,3 @@
-@import './variable.scss';
-
 .main {
   height: 150vh;
   margin: 0;
@@ -14,7 +12,6 @@
   height: 110px;
 }
 
-// 배너 및 슬라이드
 .BannerContainer {
   display: flex;
   justify-content: center;
@@ -48,7 +45,6 @@
   background-color: rgb(198, 198, 198);
 }
 
-// 일반 채용관
 .general {
   box-sizing: border-box;
   padding: 0 170px;
@@ -67,10 +63,11 @@
   align-items: center;
   margin: 20px;
   padding: 10px;
-  span {
-    padding: 5px 20px;
-    font-weight: 300;
-  }
+}
+
+.generalContainer span {
+  padding: 5px 20px;
+  font-weight: 300;
 }
 
 .linktocomD {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '../css/nav_footer.module.scss';
+import styled from '../css/nav_footer.module.css';
 import { Link } from 'react-router-dom';
 
 function NavBar() {

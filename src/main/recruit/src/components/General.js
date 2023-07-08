@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '../css/main.module.scss';
+import styled from '../css/main.module.css';
 import { Link } from 'react-router-dom';
 
 function General(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '../css/nav_footer.module.scss';
+import styled from '../css/nav_footer.module.css';
 
 function Footer() {
   return (

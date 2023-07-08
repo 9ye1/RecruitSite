@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Banner from './Banner';
 import toss_banner from '../img/toss_banner.png';
-import styled from '../css/main.module.scss';
+import styled from '../css/main.module.css';
 
 function Slideshow() {
   const banners = useMemo(

@@ -1,6 +1,7 @@
 @import './variable.scss';
 
 .nav {
+  background-color: white;
   width: 100%;
   position: fixed;
   display: flex;
@@ -9,7 +10,7 @@
   padding: 10px 50px;
   border-bottom: 1px solid rgb(208, 208, 208);
   box-sizing: border-box;
-
+  flex-wrap: wrap;
   span {
     font-size: 20px;
     font-weight: bold;

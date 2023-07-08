@@ -26,7 +26,7 @@ function Main(props) {
 
   return (
     <div className={styled.main}>
-      <NavBar></NavBar>
+      {/*<NavBar></NavBar>*/}
       <div className={styled.sizeBox}></div>
       <main className={styled.contents}>
         <SlideShow></SlideShow>

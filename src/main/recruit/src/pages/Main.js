@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from '../components/NavBar';
+
 import Footer from '../components/Footer';
 import SlideShow from '../components/SlideShow';
 import General from '../components/General';
@@ -38,7 +38,7 @@ function Main(props) {
               <General
                 key={company.id}
                 id={company.id}
-                image={company.image}
+                // image={company.image}
                 name={company.name}
                 job_group={company.job_group}
                 onClick={clickGeneral}

@@ -36,7 +36,6 @@
       }
     }
   ],
-
   "companiesMain": [
     {
       "id": "1",
@@ -45,34 +44,13 @@
       "job_group": "PM"
     },
     {
-      "id": "2",
-      "image": "url?",
-      "name": "네이버",
-      "job_group": "백엔드"
-    },
-    {
-      "id": "3",
-      "image": "url?",
-      "name": "당근",
-      "job_group": "프론트"
-    },
-    {
-      "id": "4",
-      "image": "url?",
-      "name": "대한민국 정부",
-      "job_group": "대통령"
-    },
-    {
-      "id": "5",
-      "image": "url?",
-      "name": "단국대학교",
-      "job_group": "총장"
-    },
-    {
-      "id": "6",
-      "image": "url?",
-      "name": "조건희가 만든 회사",
-      "job_group": "PO"
+      "name": "조건희가 만든 기업 무언가",
+      "job_group": "PM",
+      "info": "공정한 분배와 자유로운 능력 발휘",
+      "personnel": "1",
+      "salary": "99995",
+      "image": "",
+      "id": "JSDI0V2"
     }
   ]
 }

@@ -6,12 +6,12 @@ import styled from '../css/ComDetail.module.css';
 function ComDetail(props) {
   let navigater = useNavigate();
   let comId = 0; //나중 수정 : props.comId
-  let [comData, setcomData] = useState({ });
+  let [comData, setcomData] = useState({});
 
-  function setDate(){
-    var newArr = [...comData];  //deepcopy
+  function setDate() {
+    var newArr = [...comData]; //deepcopy
     newArr[0] = 'state 수정법';
-    setcomData( newArr );
+    setcomData(newArr);
   }
 
   useEffect(() => {
@@ -32,29 +32,20 @@ function ComDetail(props) {
       <div className={styled.sizeBox}></div>
       <div className={styled.content}>
         <div className={styled.box}>
-          <img className={styled.comImg} src='' />
+          <img className={styled.comImg} src="" />
           <h1 className={styled.comName}>{comData.name}</h1>
         </div>
 
         <div>
-          <p>{comData.info}</p><br/><br/>
+          <p>{comData.info}</p>
+          <br />
+          <br />
           <p>직군 : {comData.job_group}</p>
           <p>인원 : {comData.personnel}</p>
-          <p className={styled.comName} >연봉 : {comData.salary}</p>
+          <p className={styled.comName}>연봉 : {comData.salary}</p>
         </div>
       </div>
-      
     </div>
- );
+  );
 }
- export default ComDetail;
-
-/* import React from 'react';
-
-function ComDetail(props) {
-  console.log(props.comId);
-  return <div>디테일 화면</div>;
-}
-
 export default ComDetail;
- */

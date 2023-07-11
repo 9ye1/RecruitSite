@@ -21,13 +21,11 @@ public class PostingDto {
     @Getter
     public static class PostInfo {
         private Long id;
-        private String image;
         private String name;
         private String job_group;
 
         public PostInfo(Posting posting) {
             this.id = posting.getId();
-            this.image = posting.getImage();
             this.name = posting.getName();
             this.job_group = posting.getJobGroup();
         }
@@ -52,13 +50,11 @@ public class PostingDto {
         private Long id;
         private String name;
         private String job;
-        private String image;
 
         public ApplicantResponse(Applicant applicant) {
             this.id = applicant.getId();
             this.name = applicant.getName();
             this.job = applicant.getJob();
-            this.image = applicant.getImage();
         }
     }
 

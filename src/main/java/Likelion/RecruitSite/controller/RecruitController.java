@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+@CrossOrigin
 @RequestMapping("/users")
 @RequiredArgsConstructor
 @RestController
@@ -22,9 +23,8 @@ public class RecruitController {
     }
 
     @PostMapping("/apply") // 지원하기
-    public ResponseEntity<Object> apply(
-            @RequestPart(value = "applicant") ApplicantDto.ApplicantRequest form,
-            @RequestPart(value = "file", required = false) MultipartFile file) {
+    public ResponseEntity<Object> apply(@RequestBody ApplicantDto.ApplicantRequest form) {
+        MultipartFile file = null;
         return new ResponseEntity<>(recruitService.saveApplicant(form, file), HttpStatus.OK);
     }
 

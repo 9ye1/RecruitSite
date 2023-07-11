@@ -21,7 +21,6 @@ import java.util.Optional;
 public class PostingService {
 
     private final PostingRepository postingRepository;
-    private final FileService fileService;
     private final RecruitRepository recruitRepository;
 
     public Object findAll() {
@@ -39,17 +38,12 @@ public class PostingService {
         return new PostResponse(ExceptionCode.SUCCESS, posting.get(), applicants);
     }
 
-    @Transactional
     public Object savePosting(PostingDto.PostDto postDto, MultipartFile file) {
         Posting posting = Posting.builder().info(postDto.getInfo())
                 .jobGroup(postDto.getJob_group()).salary(postDto.getSalary())
                 .name(postDto.getName()).personnel(postDto.getPersonnel())
                 .build();
         postingRepository.save(posting);
-
-        if (file != null) {
-            posting.setImage(fileService.saveFile(posting.getId(), file, "posting"));
-        }
         return new ResponseType(ExceptionCode.SUCCESS);
     }
 }

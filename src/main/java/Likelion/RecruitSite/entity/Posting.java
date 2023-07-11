@@ -23,8 +23,6 @@ public class Posting {
     private int salary;
     private int personnel; // 인원
 
-    private String image;
-
     @Builder
     public Posting(String info, String name, String jobGroup, int salary, int personnel) {
         this.info = info;
@@ -32,9 +30,5 @@ public class Posting {
         this.jobGroup = jobGroup;
         this.salary = salary;
         this.personnel = personnel;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 }

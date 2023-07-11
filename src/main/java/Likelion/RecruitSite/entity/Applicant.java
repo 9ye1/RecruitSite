@@ -25,8 +25,6 @@ public class Applicant {
     private int age;
     private int gender;
 
-    private String image;
-
     @Column(length = 300)
     private String introduce;
 
@@ -45,10 +43,5 @@ public class Applicant {
         this.age = dto.getAge();
         this.gender = dto.getGender();
         this.introduce = dto.getIntroduce();
-        this.posting = posting;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 }

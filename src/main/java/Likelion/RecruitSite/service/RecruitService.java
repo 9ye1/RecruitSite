@@ -23,7 +23,6 @@ public class RecruitService {
 
     private final RecruitRepository recruitRepository;
     private final PostingRepository postRepository;
-    private final FileService fileService;
 
     public Object getApplicant(Long id) {
         Applicant applicant = recruitRepository.findById(id).orElse(null);
@@ -33,7 +32,6 @@ public class RecruitService {
         return new ApplicantDto.ApplicantResponse(ExceptionCode.SUCCESS, applicant);
     }
 
-    @Transactional
     public Object saveApplicant(ApplicantDto.ApplicantRequest form, MultipartFile file) {
         Optional<Posting> post = postRepository.findById(form.getId());
         if (post.isEmpty()) {
@@ -46,10 +44,6 @@ public class RecruitService {
                 .build();
         recruitRepository.save(applicant);
 
-
-        if (file != null) {
-            applicant.setImage( fileService.saveFile(applicant.getId(), file, "applicant"));
-        }
         return new ResponseType(ExceptionCode.SUCCESS);
     }
 

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+@CrossOrigin
 @RequestMapping("/companies")
 @RequiredArgsConstructor
 @RestController
@@ -23,9 +24,8 @@ public class PostingController {
 
     // 공고 작성
     @PostMapping("/posts")
-    public ResponseEntity<Object> savePosting(
-            @RequestPart(value = "post") PostingDto.PostDto postDto,
-            @RequestPart(value = "file", required = false) MultipartFile file) {
+    public ResponseEntity<Object> savePosting(@RequestBody PostingDto.PostDto postDto) {
+        MultipartFile file = null;
         return new ResponseEntity<>(postingService.savePosting(postDto, file), HttpStatus.OK);
     }
 

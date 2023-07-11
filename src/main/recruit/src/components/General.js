@@ -11,12 +11,12 @@ function General(props) {
     <div>
       <Link to="/comDetail" className={styled.linktocomD}>
         <div className={styled.generalContainer} onClick={handleClick}>
-          <img
+          {/* <img
             src={props.image}
             alt="기업 이미지"
             className={styled.generalCompimg}
-          />
-          <span>{props.name}</span>
+          /> */}
+          <h2>{props.name}</h2>
           <span>{props.job_group}</span>
         </div>
       </Link>

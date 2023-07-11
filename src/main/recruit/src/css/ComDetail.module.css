@@ -1,14 +1,9 @@
-.box{
-    margin-top: 1px;
-}
-.comName{
-    color: aqua;
+.box {
+  margin-top: 1px;
 }
 .sizeBox {
-    height: 110px;
+  height: 110px;
 }
-.content{
-    margin: 20px 20px;
-
+.content {
+  margin: 20px 20px;
 }
-  

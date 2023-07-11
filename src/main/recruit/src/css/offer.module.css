@@ -1,0 +1,47 @@
+.OfferForm {
+  padding: 50px 170px;
+}
+
+.Offercontents {
+  min-height: calc(150vh - 100px);
+}
+
+.fromFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #9bc3ff;
+  /* padding: 50px; */
+  border-radius: 30px;
+  margin: 40px;
+  font-weight: 700;
+}
+
+.input {
+  border: none;
+  border-bottom: 3px solid white;
+  width: 300px;
+  height: 60px;
+  margin: 30px 0;
+  background-color: rgba(173, 173, 173, 0);
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.input::placeholder {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
+
+.button {
+  height: 70px;
+  width: 200px;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  margin: 30px 0;
+  font-weight: 700;
+}

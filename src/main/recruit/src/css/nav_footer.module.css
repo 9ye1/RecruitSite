@@ -67,3 +67,8 @@
   margin-top: 4px;
   font-weight: bold;
 }
+
+.deleteDeco {
+  color: black;
+  text-decoration: none;
+}

@@ -6,10 +6,12 @@ function NavBar() {
   return (
     <div>
       <nav className={styled.nav}>
-        <div className={styled.slogan}>
-          <h1>HIRE</h1>
-          <span>노력으로 그린 당신의 오늘, 마침내 빛날 희망의 내일</span>
-        </div>
+        <Link to="/" className={styled.deleteDeco}>
+          <div className={styled.slogan}>
+            <h1>HIRE</h1>
+            <span>노력으로 그린 당신의 오늘, 마침내 빛날 희망의 내일</span>
+          </div>
+        </Link>
         <div className={styled.fakeLinkBox}>
           <Link
             className={styled.fakeLink}

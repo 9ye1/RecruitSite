@@ -26,7 +26,7 @@ function Apply(prop) {
 
   const handleSubmit = (e) => {
     axios
-      .post('api 주소', JSON.stringify(formData), {
+      .post('http://3.39.3.54:8080/apply', JSON.stringify(formData), {
         headers: {
           'Content-Type': 'application/json',
         },

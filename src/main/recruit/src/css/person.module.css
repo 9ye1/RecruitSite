@@ -1,0 +1,83 @@
+.person{
+    display: flex;
+    width: 90%;
+    height: 60px;
+    margin: 10px 10px;
+    border-radius: 10px;
+  }
+  .person:hover{
+    background-color: rgb(255, 255, 255);
+  }
+  .person img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+  .personName{
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px 0px 0px 0px;
+    
+  }
+  .personJob{
+    margin :0px;
+  }
+
+
+/*팝업창*/
+
+.container {
+
+    width: 500px;
+    height: 400px;
+  
+    z-index: 999;    /* 최상단 위치 */
+    
+    /* 중앙 배치 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+
+    background-color: rgb(0, 0, 0);
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px 20px;
+
+    color: aliceblue;
+  }
+  
+  .contentOne{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  .contentTwo{
+    padding : 5px 20px;
+    background-color: aliceblue;
+    color:black;
+    border-radius: 6px;
+  }
+  /* 모달창 내부 X버튼 */
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    color: aliceblue;
+
+  }
+
+  .Img{
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  .contentOne p{
+    margin: 3px 3px;
+  }

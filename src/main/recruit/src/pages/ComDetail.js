@@ -74,8 +74,47 @@ function ComDetail(props) {
           }
          
         </div>
+
+        
       
     </div> 
+
+    {/* <div className={styled.qa}>
+      <h2>Q/A</h2>
+      <div className={styled.question}>
+          영어 관련 자격증이 있어야 하나요?
+      </div>
+
+      <div className={styled.answer}>
+          아니요. 영어 관련 자격증은 필요하지 않습니다.
+      </div>
+    </div> */}
+    
+    <div className={styled.qas}>
+    <h2>🙌 기업에게 무엇이든 물어보세요!</h2>
+    {
+      comData.comment && comData.comment.map( function(a,i){
+        return(
+        //console.log(comData.applicant[i]);
+          <div className={styled.qa}>
+          
+          <div className={styled.question}>
+            <span>Q</span> { comData.comment[i].question}
+          </div>
+
+          <div className={styled.answer}>
+          <span>A</span> { comData.comment[i].answer=='' ? <span className={styled.grey}>아직 답변이 없습니다. 잠시만 기다려 주세요</span> : <span>{comData.comment[i].answer}</span>}
+          </div>
+          <br/>
+          </div>
+        
+        )
+        
+        })
+    }
+    </div>
+    
+
     </>
  );
 }

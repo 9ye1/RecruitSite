@@ -25,7 +25,6 @@ function Offer() {
     // http://localhost:3001/companiesMain
     // http://211.176.69.65:8080/companies/posts
     e.preventDefault();
-
     axios
       .post(
         'http://211.176.69.65:8080/companies/posts',
@@ -37,7 +36,7 @@ function Offer() {
         }
       )
       .then((response) => {
-        console.log(JSON.stringify(formData));
+        console(JSON.stringify(formData));
         console.log('채용 공고가 성공적으로 업로드되었습니다.');
         alert('채용 공고가 성공적으로 업로드되었습니다.');
       })

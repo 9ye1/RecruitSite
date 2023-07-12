@@ -15,9 +15,10 @@ function Main(props) {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/companiesMain')
+      .get('http://3.39.3.54:8080/companies')
       .then((response) => {
-        setComdata(response.data);
+        setComdata(response.data.postingList);
+        console.log(Comdata);
       })
       .catch(() => {
         console.log('서버 연결 실패');

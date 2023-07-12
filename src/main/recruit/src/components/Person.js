@@ -40,7 +40,7 @@ function Person(props){
           
           axios
           //.get('http://211.176.69.65:8080/companies') //회사 id값으로 상세정보 가져오기
-          .get(`http://localhost:3001/users/${props.id}`)
+          .get(`http://3.39.3.54:8080/users/${props.id}`)
           .then((data) => {
             //setcomData(data.data.postingList[props.comId]);
             console.log(data.data);

@@ -23,7 +23,7 @@ function Offer() {
 
   const handleSubmit = (e) => {
     axios
-      .post('http://localhost:3001/companiesMain', JSON.stringify(formData), {
+      .post('http://3.39.3.54:8080/companies/posts', JSON.stringify(formData), {
         headers: {
           'Content-Type': 'application/json',
         },

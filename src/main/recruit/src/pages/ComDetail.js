@@ -6,15 +6,17 @@ import { useNavigate } from 'react-router-dom';
 
 
 function ComDetail(props) {
-  let [comId] = useState(0); //나중 수정 : props.comId
+  let [comId] = useState(1); //나중 수정 : props.comId
   let [comData, setcomData] = useState({
-    "id": "",
+    "posting" : {
+      "id": "",
     "image": " ",
     "name": " ",
     "job_group": " ",
     "info": " ",
     "personnel": " ",
-    "salary": " ",
+    "salary": " "
+    },
     "applicant": [
       {
         "id" : "1",
@@ -37,11 +39,11 @@ function ComDetail(props) {
     //렌더링 될 때 마다 실행
     axios
       //.get('http://211.176.69.65:8080/companies') //회사 id값으로 상세정보 가져오기
-      .get('http://localhost:3001/companies')
+      .get(`http://3.39.3.54:8080/companies/${props.comId}`)
       .then((data) => {
         //setcomData(data.data.postingList[props.comId]);
-        console.log(data.data[comId]);
-        setcomData(data.data[comId]);
+        console.log(data.data);
+        setcomData(data.data);
       })
       .catch(() => {
         console.log('서버 연결 실패욤');
@@ -54,17 +56,17 @@ function ComDetail(props) {
     <div className={styled.ComDetail}>
         <div className={styled.content}>
             {/*<img className={styled.comImg} src={ comData && comData.image} />*/}
-            <h1 className={styled.comName}>{comData.name ?? ''}</h1>
+            <h1 className={styled.comName}>{comData.posting.name ?? ''}</h1>
             <p>{comData.info ?? ''}</p><br/><br/>
-            <p><span>직군</span> : {comData.job_group ?? ''}</p>
-            <p><span>인원</span> : {comData.personnel ?? ''}</p>
-            <p className={styled.comName} ><span>연봉</span> : {comData.salary  ?? ''}</p>
+            <p><span>직군</span> : {comData.posting.job_group ?? ''}</p>
+            <p><span>인원</span> : {comData.posting.personnel ?? ''}</p>
+            <p className={styled.comName} ><span>연봉</span> : {comData.posting.salary  ?? ''}</p>
             <button onClick={ ()=> { navigate('/apply') } } className={styled.apply  ?? ''}>지원하기</button>
         </div>  
 
 
         <div className={styled.applicants}>
-          <p className={styled.title}>현재 <span>{comData.name ?? ''}</span> 지원자</p>
+          <p className={styled.title}>현재 <span>{comData.posting.name ?? ''}</span> 지원자</p>
           {
               comData.applicant && comData.applicant.map( function(a,i){
               //console.log(comData.applicant[i]);
@@ -90,7 +92,7 @@ function ComDetail(props) {
       </div>
     </div> */}
     
-    <div className={styled.qas}>
+    {/* <div className={styled.qas}>
     <h2>🙌 기업에게 무엇이든 물어보세요!</h2>
     {
       comData.comment && comData.comment.map( function(a,i){
@@ -113,7 +115,7 @@ function ComDetail(props) {
         })
     }
     </div>
-    
+     */}
 
     </>
  );

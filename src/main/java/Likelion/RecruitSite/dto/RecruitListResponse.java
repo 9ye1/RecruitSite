@@ -11,11 +11,11 @@ import java.util.List;
 @Setter
 public class RecruitListResponse extends ResponseType {
 
-    private List<Applicant> info;
+    private List<Applicant> applicants;
 
-    public RecruitListResponse(ExceptionCode exceptionCode, List<Applicant> info) {
+    public RecruitListResponse(ExceptionCode exceptionCode, List<Applicant> applicants) {
         super(exceptionCode);
-        this.info = info;
+        this.applicants = applicants;
     }
 
 }

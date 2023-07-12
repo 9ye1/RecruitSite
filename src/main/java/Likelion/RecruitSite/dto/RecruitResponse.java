@@ -8,15 +8,15 @@ import lombok.Setter;
 @Setter
 public class RecruitResponse extends ResponseType {
 
-    private Object info;
+    private Object applicant;
 
     public RecruitResponse(ExceptionCode exceptionCode) {
         super(exceptionCode);
     }
 
-    public RecruitResponse(ExceptionCode exceptionCode, Object info) {
+    public RecruitResponse(ExceptionCode exceptionCode, Object applicant) {
         super(exceptionCode);
-        this.info = info;
+        this.applicant = applicant;
     }
 
 }

@@ -11,17 +11,16 @@ function Main(props) {
 
   function clickGeneral(id) {
     props.setComId(id);
-    console.log(`${id}in main.js`)
   }
 
   useEffect(() => {
     // http://localhost:3001/companiesMain
     // http://211.176.69.65:8080/companies
     axios
-      .get('http://3.39.3.54:8080/companies')
+      .get('http://211.176.69.65:8080/companies')
       .then((response) => {
         setComdata(response.data.postingList);
-        //console.log(response.data.postingList);
+        console.log(response.data);
       })
       .catch(() => {
         console.log('서버 연결 실패');

@@ -32,7 +32,7 @@ function Slideshow() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBanner((prevBanner) => (prevBanner + 1) % banners.length);
-    }, 5000);
+    }, 3000);
 
     return () => {
       clearInterval(interval);

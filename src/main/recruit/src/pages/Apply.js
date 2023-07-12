@@ -25,8 +25,9 @@ function Apply(prop) {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     axios
-      .post('http://3.39.3.54:8080/apply', JSON.stringify(formData), {
+      .post('http://3.39.3.54:8080/users/apply', JSON.stringify(formData), {
         headers: {
           'Content-Type': 'application/json',
         },

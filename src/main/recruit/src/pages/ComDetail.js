@@ -41,9 +41,9 @@ function ComDetail(props) {
       //.get('http://211.176.69.65:8080/companies') //회사 id값으로 상세정보 가져오기
       .get(`http://3.39.3.54:8080/companies/${props.comId}`)
       .then((data) => {
-        //setcomData(data.data.postingList[props.comId]);
-        console.log(data.data);
         setcomData(data.data);
+        console.log(props.comId);
+        console.log(data.data);
       })
       .catch(() => {
         console.log('서버 연결 실패욤');

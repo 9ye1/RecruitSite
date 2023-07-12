@@ -10,7 +10,6 @@ import Likelion.RecruitSite.repository.PostingRepository;
 import Likelion.RecruitSite.repository.RecruitRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -38,7 +37,7 @@ public class PostingService {
         return new PostResponse(ExceptionCode.SUCCESS, posting.get(), applicants);
     }
 
-    public Object savePosting(PostingDto.PostDto postDto, MultipartFile file) {
+    public Object savePosting(PostingDto.PostDto postDto) {
         Posting posting = Posting.builder().info(postDto.getInfo())
                 .jobGroup(postDto.getJob_group()).salary(postDto.getSalary())
                 .name(postDto.getName()).personnel(postDto.getPersonnel())

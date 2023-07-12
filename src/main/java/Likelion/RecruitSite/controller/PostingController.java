@@ -25,8 +25,7 @@ public class PostingController {
     // 공고 작성
     @PostMapping("/posts")
     public ResponseEntity<Object> savePosting(@RequestBody PostingDto.PostDto postDto) {
-        MultipartFile file = null;
-        return new ResponseEntity<>(postingService.savePosting(postDto, file), HttpStatus.OK);
+        return new ResponseEntity<>(postingService.savePosting(postDto), HttpStatus.OK);
     }
 
     // 기업 세부 정보 조회

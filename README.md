@@ -14,4 +14,3 @@
 ---
 ### API
 ![image](https://github.com/9ye1/RecruitSite/assets/72748734/6fba2c7b-90ff-40b8-b2ce-63785ef4ec29)
-- image : 제거

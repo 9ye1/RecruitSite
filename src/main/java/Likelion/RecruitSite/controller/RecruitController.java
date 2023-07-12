@@ -33,7 +33,6 @@ public class RecruitController {
 
     @PostMapping("/users/apply")    //지원하기
     public ResponseEntity<RecruitResponse> apply(@RequestBody ApplicantDto form){
-        log.info(form.toString());
         Applicant applicant = recruitService.apply(form);
         ResponseEntity<Applicant> response = (applicant != null) ?
                 ResponseEntity.status(HttpStatus.OK).build() :

@@ -2,7 +2,7 @@
   "companies": [
     {
       "id": "1",
-      "image": "url?",
+      "image": "https://i.ibb.co/F30s7yX/c3ba8df104f0393fcd5447eca9b21e48.jpg",
       "name": "토스",
       "job_group": "프론트엔드",
       "info": "여기는 토스입니다 프론트엔드 개발자 채용합니다.",
@@ -10,14 +10,52 @@
       "salary": "70000000",
       "applicant": [
         {
+          "id" : "1",
+          "image": "https://i.ibb.co/F30s7yX/c3ba8df104f0393fcd5447eca9b21e48.jpg",
           "name": "구예원",
-          "job": "프론트엔드",
-          "introduce": "인재를 놓치시면 안됩니다."
+          "job": "프론트엔드"
         },
         {
+          "id" : "2",
+          "image": "https://i.ibb.co/MSP3txg/vs2.png",
           "name": "아무개",
-          "job": "프론트엔드",
-          "introduce": "키득키득"
+          "job": "백엔드"
+        },
+        {
+          "id" : "3",
+          "image": "https://i.ibb.co/MSP3txg/vs2.png",
+          "name": "손정현",
+          "job": "백엔드"
+        },
+        {
+          "id" : "4",
+          "image": "https://i.ibb.co/MSP3txg/vs2.png",
+          "name": "장지수",
+          "job": "백엔드"
+        },
+        {
+          "id" : "5",
+          "image": "https://i.ibb.co/MSP3txg/vs2.png",
+          "name": "니코",
+          "job": "백엔드"
+        }
+      ],
+      "comment" : [
+        {
+          "question" : "영어 관련 자격증이 있어야 하나요?",
+          "answer" : "아니요. 영어 관련 자격증은 필요하지 않습니다."
+        },
+        {
+          "question" : "재택근무 가능한가요?",
+          "answer" : "네! 주 1회 자유 재택 근무 입니다."
+        },
+        {
+          "question" : "멋쟁이사자처럼 가산점 있나요?",
+          "answer" : "서류 및 1차 면접 면제 입니다."
+        },
+        {
+          "question" : "영어 관련 자격증이 있어야 하나요?",
+          "answer" : ""
         }
       ]
     },
@@ -30,9 +68,9 @@
       "personnel": "3",
       "salary": "4253200000",
       "applicant": {
+        "image": "https://i.ibb.co/F30s7yX/c3ba8df104f0393fcd5447eca9b21e48.jpg",
         "name": "홍길동",
-        "job": "백엔드",
-        "introduce": "아버지를 아버지라 부르지 못하고..."
+        "job": "백엔드"
       }
     }
   ],
@@ -51,6 +89,69 @@
       "salary": "99995",
       "image": "",
       "id": "JSDI0V2"
+    }
+  ],
+
+  "users": [
+    {
+      "id": "1",
+      "image": "https://framerusercontent.com/images/y7135TGP0TiQ7gtLbQ0IrWOzww.jpg",
+      "name": "구예원",
+      "age": "23",
+      "gender" : "1",
+      "introduce" : "안녕하세요 ",
+      "school" : "단국대학교",
+      "job" : "학생",
+      "major" : "소프트웨어학과",
+      "phoneNumber" : "010-8282-1110"
+    },
+    {
+      "id": "2",
+      "image": "https://framerusercontent.com/images/y7135TGP0TiQ7gtLbQ0IrWOzww.jpg",
+      "name": "아무개",
+      "age": "26",
+      "gender" : "0",
+      "introduce" : " 프론트엔드 경력 2년, 성장을 위한 개발자 ",
+      "school" : "단국대학교",
+      "job" : "없음",
+      "major" : "컴퓨터공학과",
+      "phoneNumber" : "010-4655-1110"
+    },
+    {
+      "id": "3",
+      "image": "https://framerusercontent.com/images/y7135TGP0TiQ7gtLbQ0IrWOzww.jpg",
+      "name": "손정현",
+      "age": "26",
+      "gender" : "0",
+      "introduce" : " 프론트엔드 / ",
+      "school" : "서울대학교",
+      "job" : "없음",
+      "major" : "컴퓨터공학과",
+      "phoneNumber" : "010-4655-1110"
+    },
+    {
+      "id": "4",
+      "image": "https://framerusercontent.com/images/y7135TGP0TiQ7gtLbQ0IrWOzww.jpg",
+      "name": "장지수",
+      "age": "26",
+      "gender" : "0",
+      "introduce" : " 프론트엔드 경력 2년, 성장을 위한 개발자 ",
+      "school" : "단국대학교",
+      "job" : "없음",
+      "major" : "컴퓨터공학과",
+      "phoneNumber" : "010-4655-1110"
+    },
+    {
+      "id": "5",
+      "image": "https://framerusercontent.com/images/y7135TGP0TiQ7gtLbQ0IrWOzww.jpg",
+      "name": "니코",
+      "age": "26",
+      "gender" : "0",
+      "introduce" : " 프론트엔드 경력 2년, 성장을 위한 개발자 ",
+      "school" : "단국대학교",
+      "job" : "없음",
+      "major" : "컴퓨터공학과",
+      "phoneNumber" : "010-4655-1110"
     }
   ]
 }

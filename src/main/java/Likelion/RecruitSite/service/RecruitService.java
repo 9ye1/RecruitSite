@@ -1,27 +1,48 @@
 package Likelion.RecruitSite.service;
 
 import Likelion.RecruitSite.dto.ApplicantDto;
-import Likelion.RecruitSite.dto.ExceptionCode;
-import Likelion.RecruitSite.dto.ResponseType;
 import Likelion.RecruitSite.entity.Applicant;
 import Likelion.RecruitSite.entity.Posting;
 import Likelion.RecruitSite.repository.PostingRepository;
 import Likelion.RecruitSite.repository.RecruitRepository;
-import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
 
-import static Likelion.RecruitSite.dto.ExceptionCode.SUCCESS;
-
-@RequiredArgsConstructor
+@Slf4j
 @Service
 public class RecruitService {
 
-    private final RecruitRepository recruitRepository;
+    @Autowired
+    RecruitRepository recruitRepository;
+
+    @Autowired
+    PostingRepository postRepository;
+
+    public Applicant getApplicant(Long id) {
+        return recruitRepository.findById(id).orElse(null);
+    }
+
+    public Applicant apply(ApplicantDto form) {
+        Optional<Posting> post = postRepository.findById(form.getCompany_id());
+        log.info("getCompany 값:"+ post);
+        Applicant applicant = form.toEntity(post.get());
+        if (applicant.getId() != null) {
+            return null;
+        }
+        return recruitRepository.save(applicant);
+
+
+    }
+
+    public List<Applicant> getAll() {
+        return recruitRepository.findAll();
+    }
+
+/*    private final RecruitRepository recruitRepository;
     private final PostingRepository postRepository;
 
     public Object getApplicant(Long id) {
@@ -51,6 +72,6 @@ public class RecruitService {
         List<Applicant> applicants = recruitRepository.findAll();
         System.out.println("applicants.size() = " + applicants.size());
         return new ApplicantDto.ApplicantsResponse(SUCCESS, applicants);
-    }
+    }*/
 
 }

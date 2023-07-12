@@ -13,5 +13,5 @@
 
 ---
 ### API
-![image](https://github.com/9ye1/RecruitSite/assets/67951802/6d829c0a-2d38-4f65-999d-fbc06b8f40a4)
+![image](https://github.com/9ye1/RecruitSite/assets/72748734/6fba2c7b-90ff-40b8-b2ce-63785ef4ec29)
 - image : 제거

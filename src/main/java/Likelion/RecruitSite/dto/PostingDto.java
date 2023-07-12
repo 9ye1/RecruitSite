@@ -11,11 +11,15 @@ public class PostingDto {
 
     @Getter
     public static class PostDto {
+        private String info;
         private String name;
         private String job_group;
-        private String info;
         private int personnel;
         private int salary;
+
+        public Posting toEntity() {
+            return new Posting(null, info, name, job_group, personnel, salary);
+        }
     }
 
     @Getter

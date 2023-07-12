@@ -38,10 +38,7 @@ public class PostingService {
     }
 
     public Object savePosting(PostingDto.PostDto postDto) {
-        Posting posting = Posting.builder().info(postDto.getInfo())
-                .jobGroup(postDto.getJob_group()).salary(postDto.getSalary())
-                .name(postDto.getName()).personnel(postDto.getPersonnel())
-                .build();
+        Posting posting = postDto.toEntity();
         postingRepository.save(posting);
         return new ResponseType(ExceptionCode.SUCCESS);
     }
